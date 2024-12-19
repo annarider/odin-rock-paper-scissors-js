@@ -58,17 +58,8 @@ function getHumanChoice() {
  * 
  * Format input to be case insensitive
  * 
- * If same choice, then it's a tie and both get a point. 
- * Announce a tie.
- * 
- * If it's rock against paper, the player
- * who chose paper wins.
- * 
- * If it's rock against scissors, the player who
- * chose scissors wins. 
- * 
- * If it's paper against scissors, the player who
- * chose scissors wins. 
+ * If same, then tie. Both players
+ * get a point.
  * 
  * Human rock:
  * Computer paper: computer wins
@@ -88,26 +79,30 @@ function getHumanChoice() {
 */
 
 function playRound(humanChoice, computerChoice) { 
-
   if (humanChoice.toLowerCase() === computerChoice) {
     humanScore += 1;
     computerScore += 1;
-    return 'Tie! You both won.'
-  }
-  switch (humanChoice.toLowerCase()) {
-    case 'rock':
-      ;
-      break;
-    case 'Mangoes':
-    case 'Papayas':
-      console.log('Mangoes and papayas are $2.79 a pound.');
-      // Expected output: "Mangoes and papayas are $2.79 a pound."
-      break;
-    default:
-      console.log(`Sorry, we are out of ${expr}.`);
+    console.log('Tie! You both won.');
+  } else if (humanChoice.toLowerCase() === 'rock' && computerChoice === 'paper' ) {
+    computerScore += 1;
+    console.log("You lose! Paper beats Rock.");
+  } else if (humanChoice.toLowerCase() === 'rock' && computerChoice === 'scissors' ) {
+    humanScore += 1;
+    console.log("You win! Scissors beats Rock.");
+  } else if (humanChoice.toLowerCase() === 'paper' && computerChoice === 'rock' ) {
+    humanScore += 1;
+    console.log("You win! Paper beats Rock.");
+  } else if (humanChoice.toLowerCase() === 'paper' && computerChoice === 'scissors' ) {
+    computerScore += 1;
+    console.log("You lose! Scissors beat Paper.");
+  } else if (humanChoice.toLowerCase() === 'scissors' && computerChoice === 'rock' ) {
+    computerScore += 1;
+    console.log("You lose! Rock beats Scissors.");
+  } else if (humanChoice.toLowerCase() === 'scissors' && computerChoice === 'paper' ) {
+    humanScore += 1;
+    console.log("You win! Scissors beat Paper.");
   }
 }
-
-// const humanSelection = getHumanChoice();
+const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
-console.log(getHumanChoice());
+// console.log(getHumanChoice());
