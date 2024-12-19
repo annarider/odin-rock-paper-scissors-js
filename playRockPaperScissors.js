@@ -14,6 +14,9 @@
  * Return the string   
  */
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * 100);
   if (randomNum % 3 === 0) {
