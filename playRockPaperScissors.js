@@ -25,9 +25,31 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
+/**
+ * getHumanChoice takes a user's choice & returns it
+ * 
+ * Provide a prompt with a message
+ * The message asks a user to choose between
+ * rock, paper, or scissors
+ * The user can type in r, p, or s
+ * If the user doesn't type in one of those values,
+ * provide an error meessage
+ * The function returns the object choice
+ */
 
+function getHumanChoice() {
+  choice = prompt(`Let's play! Choose rock, paper, or scissors. 
+    Enter the letter r for rock, p for paper, and s or scissors.`);
+  if (choice === 'r') {
+    return "rock";
+  } else if (choice === 'p') {
+    return "paper";
+  } else if (choice === 's') {
+    return "scissors";
+  } else {
+    return "Incorrect input. Refresh & try again";
+  }
 }
 
 
-console.log(getComputerChoice());
+console.log(getHumanChoice());
