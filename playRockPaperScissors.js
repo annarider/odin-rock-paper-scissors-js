@@ -82,26 +82,19 @@ function playRound(humanChoice, computerChoice) {
   if (humanChoice.toLowerCase() === computerChoice) {
     humanScore += 1;
     computerScore += 1;
-    console.log('Tie! You both won.');
-    return 
+    return "tie";
   } else if (humanChoice.toLowerCase() === 'rock' && computerChoice === 'paper' ) {
-    computerScore += 1;
-    console.log("You lose! Paper beats Rock.");
+    return "computer";
   } else if (humanChoice.toLowerCase() === 'rock' && computerChoice === 'scissors' ) {
-    humanScore += 1;
-    console.log("You win! Scissors beats Rock.");
+    return "human";
   } else if (humanChoice.toLowerCase() === 'paper' && computerChoice === 'rock' ) {
-    humanScore += 1;
-    console.log("You win! Paper beats Rock.");
+    return "human";
   } else if (humanChoice.toLowerCase() === 'paper' && computerChoice === 'scissors' ) {
-    computerScore += 1;
-    console.log("You lose! Scissors beat Paper.");
+    return "computer";
   } else if (humanChoice.toLowerCase() === 'scissors' && computerChoice === 'rock' ) {
-    computerScore += 1;
-    console.log("You lose! Rock beats Scissors.");
+    return "computer";
   } else if (humanChoice.toLowerCase() === 'scissors' && computerChoice === 'paper' ) {
-    humanScore += 1;
-    console.log("You win! Scissors beat Paper.");
+    return "human";
   }
 }
 
@@ -139,8 +132,9 @@ function playGame() {
       humanScore += 1;
       computerScore += 1;
     }
-    console.log("The winner is: " + winner);
+    console.log(winner);
   }
-  
-
+  humanScore > computerScore ? console.log("The winner is you!") : console.log("The winner is computer!");
 }
+
+playGame();
