@@ -36,22 +36,13 @@ function getComputerChoice() {
  * rock, paper, or scissors
  * The user can type in r, p, or s
  * If the user doesn't type in one of those values,
- * provide an error meessage
+ * provide an error message
  * The function returns the object choice
  */
 
 function getHumanChoice() {
-  choice = prompt(`Let's play! Choose rock, paper, or scissors. 
-    Enter the letter r for rock, p for paper, and s or scissors.`);
-  if (choice === 'r') {
-    return "rock";
-  } else if (choice === 'p') {
-    return "paper";
-  } else if (choice === 's') {
-    return "scissors";
-  } else {
-    return "Incorrect input. Refresh & try again";
-  }
+  choice = prompt(`Let's play! Enter rock, paper, or scissors.`);
+  return choice;
 }
 
 /**
@@ -64,6 +55,8 @@ function getHumanChoice() {
  * 2. rock < paper
  * 3. rock > scissors
  * 4. paper < scissors   
+ * 
+ * Format input to be case insensitive
  * 
  * If same choice, then it's a tie and both get a point. 
  * Announce a tie.
@@ -83,9 +76,10 @@ function getHumanChoice() {
 */
 
 function playRound(humanChoice, computerChoice) {
+  let 
 
 }
 
-const humanSelection = getHumanChoice();
+// const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
-// console.log(getHumanChoice());
+console.log(getHumanChoice());
