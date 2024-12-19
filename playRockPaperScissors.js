@@ -59,22 +59,6 @@ function getHumanChoice() {
  * as arguments, plays a single round, increments
  * the winner's score, and announces a winner.
  * 
- * If the human and the computer
- * choose the same, it's a tie. 
- * 
- * If the human chooses rock, the computer 
- * chooses paper, the computer wins. 
- * The computer wins a point. 
- * Assign the winner variable to the computer. 
- * 
- * If the human chooses rock, the computer
- * chooses scissors, the human wins. 
- * The human wins a point.
- * Assign the winner variable to the human.
- * 
- * If the human chooses paper, the computer
- * chooses rock, the human wins. 
- * 
  * All possible combinations: 
  * 1. same = same
  * 2. rock < paper
