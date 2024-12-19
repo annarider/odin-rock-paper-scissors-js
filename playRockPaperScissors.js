@@ -54,5 +54,18 @@ function getHumanChoice() {
   }
 }
 
+/**
+ * playRound takes a human and computer's choices
+ * as arguments, plays a single round, increments
+ * the winner's score, and announces a winner.
+ * 
+ * 
+ */
 
-console.log(getHumanChoice());
+function playRound(humanChoice, computerChoice) {
+
+}
+
+const humanSelection = getHumanChoice();
+const computerSelecton = getComputerChoice();
+// console.log(getHumanChoice());
