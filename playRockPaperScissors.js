@@ -16,7 +16,14 @@
 
 function getComputerChoice () {
   let randomNum = Math.floor(Math.random() * 100);
-  console.log(randomNum);
+  if (randomNum % 3 === 0) {
+    return "rock";
+  } else if (randomNum % 3 === 1) {
+    return "paper";
+  } else {
+    return "scissors";
+  }
 }
 
-getComputerChoice();
+;
+console.log(getComputerChoice());
