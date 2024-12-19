@@ -14,7 +14,7 @@
  * Return the string   
  */
 
-function getComputerChoice () {
+function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * 100);
   if (randomNum % 3 === 0) {
     return "rock";
@@ -25,5 +25,9 @@ function getComputerChoice () {
   }
 }
 
-;
+function getHumanChoice() {
+
+}
+
+
 console.log(getComputerChoice());
