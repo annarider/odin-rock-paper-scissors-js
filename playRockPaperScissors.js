@@ -70,14 +70,42 @@ function getHumanChoice() {
  * If it's paper against scissors, the player who
  * chose scissors wins. 
  * 
+ * Human rock:
+ * Computer paper: computer wins
+ * Computer scissors: human wins
+ * 
+ * Human paper: 
+ * Computer rock: human wins
+ * Computer scissors: computer wins
+ * 
+ * Human scissors: 
+ * Computer rock: computer wins
+ * Computer paper: human wins
+ * 
  * The winner player gets 1 point.
  * The game announces the winner. 
  * 
 */
 
-function playRound(humanChoice, computerChoice) {
-  let 
+function playRound(humanChoice, computerChoice) { 
 
+  if (humanChoice.toLowerCase() === computerChoice) {
+    humanScore += 1;
+    computerScore += 1;
+    return 'Tie! You both won.'
+  }
+  switch (humanChoice.toLowerCase()) {
+    case 'rock':
+      ;
+      break;
+    case 'Mangoes':
+    case 'Papayas':
+      console.log('Mangoes and papayas are $2.79 a pound.');
+      // Expected output: "Mangoes and papayas are $2.79 a pound."
+      break;
+    default:
+      console.log(`Sorry, we are out of ${expr}.`);
+  }
 }
 
 // const humanSelection = getHumanChoice();
