@@ -80,8 +80,6 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) { 
   if (humanChoice.toLowerCase() === computerChoice) {
-    humanScore += 1;
-    computerScore += 1;
     return "tie";
   } else if (humanChoice.toLowerCase() === 'rock' && computerChoice === 'paper' ) {
     return "computer";
