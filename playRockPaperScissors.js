@@ -59,30 +59,44 @@ function playGame() {
   const buttons = document.querySelectorAll("button");
   const container = document.querySelector("#results");
 
-  // iterate through each button
   buttons.forEach((button) => {
     // and for each choice we add a 'click' listener
     button.addEventListener("click", () => {
-      const humanChoice = button.id;
-      const computerChoice = getComputerChoice();
-      const result = playRound(humanChoice, computerChoice);
-
-      // display result
-      const content = document.createElement("p");
-      content.textContent = `You chose ${humanChoice}, and computer chose
+      if (humanScore < 5 && computerScore < 5) {
+        let humanChoice = button.id;
+        let computerChoice = getComputerChoice();
+        const result = playRound(humanChoice, computerChoice);
+        // display result
+        const content = document.createElement("p");
+        content.textContent = `You chose ${humanChoice}, and computer chose
         ${computerChoice}. The winner of this round is ${result}.`;
-      
-      // calculate score
-      result === 'tie' ? (humanScore++, computerScore++) : result === 'human' ? humanScore ++ : computerScore++;   
-      const score = document.createElement("p");
-      score.textContent = `The score is human ${humanScore} : computer ${computerScore}.`;
-
-      container.appendChild(content);
-      container.appendChild(score);
-
+        
+        // calculate score
+        result === 'tie' ? (humanScore++, computerScore++) : 
+        result === 'human' ? humanScore ++ : computerScore++;   
+        const score = document.createElement("p");
+        score.textContent = `The score is human: ${humanScore} and computer: ${computerScore}.`;
+        
+        container.appendChild(content);
+        container.appendChild(score);     
+      }
+      if (humanScore === 5 || computerScore === 5) {
+        // track game winner
+        let gameWinner = ''; 
+        if (humanScore === computerScore) {
+          gameWinner = 'both human and computer';
+        } else if (humanScore > computerScore) {
+          gameWinner = 'human';
+        } else {
+          gameWinner = 'computer';
+        }
+        const gameResult = document.createElement("p");
+        gameResult.textContent = 'Game result: The winner is ' 
+          + gameWinner + '.';
+        container.appendChild(gameResult);
+      }
     });
   });
 }
-
 
 playGame();
